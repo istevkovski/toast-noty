@@ -17,7 +17,7 @@ async function generateIcons() {
 		.readdirSync(SVG_DIR)
 		.filter((filename) => filename.match(/\.svg$/i));
 
-	const indexExports = [];
+	const indexExports = ['Icon'];
 	const componentNames = [];
 
 	for (const filename of filenames) {
@@ -55,10 +55,16 @@ function toPascalCase(string) {
 
 function generateIconComponent({ componentName, svg }) {
 	return format(
-		`
-export function ${componentName}({ fill }: { fill: string }) {
-  return <div>${svg}</div>;
-}`,
+		`import { Icon } from "./Icon";
+
+		interface IconProps
+			extends Omit<React.HTMLAttributes<HTMLElement>, 'children'> {
+			fill?: string;
+		}
+
+		export function ${componentName}({ fill, className, ...rest }: IconProps) {
+			return <Icon className={className} {...rest}>${svg}</Icon>;
+		}`,
 		PRETTIER_CONFIG,
 	);
 }

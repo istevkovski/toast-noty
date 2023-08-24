@@ -20,7 +20,7 @@ function Toast({
 	return (
 		<div className={classnames([styles['Toast'], className])} {...rest}>
 			<div className="icon">
-				<IconSuccess fill="#FFF800" />
+				<IconSuccess />
 			</div>
 			<div className="content">
 				<h2 className="title">{title}</h2>
