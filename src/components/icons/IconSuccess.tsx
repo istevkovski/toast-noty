@@ -3,11 +3,12 @@ import { Icon } from './Icon';
 interface IconProps
   extends Omit<React.HTMLAttributes<HTMLElement>, 'children'> {
   fill?: string;
+  size?: 'small' | 'default';
 }
 
-export function IconSuccess({ fill, className, ...rest }: IconProps) {
+export function IconSuccess({ size, fill, className, ...rest }: IconProps) {
   return (
-    <Icon className={className} {...rest}>
+    <Icon size={size} className={className} {...rest}>
       <svg
         width="28"
         height="28"

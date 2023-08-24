@@ -1,8 +1,8 @@
 import classnames from 'classnames';
-import '../styles/fonts.scss';
-import '../styles/reset.scss';
+import { IconCross, IconSuccess } from 'components/icons';
+import '../../styles/fonts.scss';
+import '../../styles/reset.scss';
 import styles from './Toast.module.scss';
-import { IconSuccess } from './icons';
 
 export interface ToastProps extends React.HTMLAttributes<HTMLDivElement> {
 	title?: string;
@@ -19,13 +19,17 @@ function Toast({
 }: ToastProps) {
 	return (
 		<div className={classnames([styles['Toast'], className])} {...rest}>
-			<div className="icon">
-				<IconSuccess />
+			<IconSuccess className={styles.IndicationIcon} fill="#0F552C" />
+			<div className={styles.Content}>
+				<h2>{title}</h2>
+				<p>{message}</p>
 			</div>
-			<div className="content">
-				<h2 className="title">{title}</h2>
-				<p className="message">{message}</p>
-			</div>
+			<IconCross
+				className={styles.Close}
+				fill="#135E32"
+				size="small"
+				onClick={() => alert('Closed')}
+			/>
 		</div>
 	);
 }

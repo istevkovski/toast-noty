@@ -60,10 +60,11 @@ function generateIconComponent({ componentName, svg }) {
 		interface IconProps
 			extends Omit<React.HTMLAttributes<HTMLElement>, 'children'> {
 			fill?: string;
+			size?: 'small' | 'default';
 		}
 
-		export function ${componentName}({ fill, className, ...rest }: IconProps) {
-			return <Icon className={className} {...rest}>${svg}</Icon>;
+		export function ${componentName}({ size, fill, className, ...rest }: IconProps) {
+			return <Icon size={size} className={className} {...rest}>${svg}</Icon>;
 		}`,
 		PRETTIER_CONFIG,
 	);
