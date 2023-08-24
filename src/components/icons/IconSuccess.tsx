@@ -1,10 +1,5 @@
 import { Icon } from './Icon';
-
-interface IconProps
-  extends Omit<React.HTMLAttributes<HTMLElement>, 'children'> {
-  fill?: string;
-  size?: 'small' | 'default';
-}
+import { IconProps } from 'src/types/Icons';
 
 export function IconSuccess({ size, fill, className, ...rest }: IconProps) {
   return (

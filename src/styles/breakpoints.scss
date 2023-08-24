@@ -1,0 +1,7 @@
+$screen-tablet: 550px;
+
+@mixin screen-tablet {
+	@media only screen and (min-width: $screen-tablet){
+		@content;
+	}
+}
