@@ -1,6 +1,9 @@
+@use "../../styles/breakpoints";
+
+
 .ToastsContainer {
 	position: fixed;
-	padding: 1.5rem;
+	padding: 0.5625rem 0;
 	display: flex;
 	flex-direction: column-reverse;
 	align-items: center;
@@ -11,4 +14,9 @@
 	height: 100%;
 	z-index: 1;
 	pointer-events: none;
+	overflow-y: auto;
+
+	@include breakpoints.screen-tablet {
+		padding: 1.5rem 0;
+	}
 }

@@ -9,7 +9,8 @@ export const Example = () => {
 			onClick={() =>
 				createToast({
 					title: `Title: ${uuid()}`,
-					message: 'Message: Potatoes',
+					message:
+						'Sit esse duis incididunt nostrud tempor est pariatur enim. Quis cillum est cupidatat qui do. Exercitation velit ea velit irure dolor deserunt eiusmod ut reprehenderit. Cillum sunt duis ullamco aliquip elit cillum pariatur.',
 					duration: 300,
 				})
 			}
