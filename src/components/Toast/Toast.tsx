@@ -5,17 +5,12 @@ import {
 	IconSuccess,
 	IconWarning,
 } from 'components/icons';
-import { IconProps } from 'src/types/Icons';
+import { useToasts } from 'hooks/useToasts';
+import React, { useEffect } from 'react';
+import { IToastProps, TToastDefaults, TToastTypes } from 'types/Toasts';
 import '../../styles/fonts.scss';
 import '../../styles/reset.scss';
 import styles from './Toast.module.scss';
-
-type TToastTypes = 'warning' | 'success' | 'danger';
-
-type TToastDefaults = {
-	title: string;
-	icon: (props: IconProps) => JSX.Element;
-};
 
 const defaults: { [key in TToastTypes]: TToastDefaults } = {
 	warning: { title: 'Warning ', icon: IconWarning },
@@ -23,26 +18,31 @@ const defaults: { [key in TToastTypes]: TToastDefaults } = {
 	danger: { title: 'Danger', icon: IconDanger },
 };
 
-export interface ToastProps extends React.HTMLAttributes<HTMLDivElement> {
-	type?: TToastTypes;
-	title?: string;
-	message: string;
-	duration?: number;
-}
-
 function Toast({
+	id,
 	type = 'success',
 	title,
 	message,
 	duration = 6,
-	className,
 	...rest
-}: ToastProps) {
+}: IToastProps) {
 	const IconElement = defaults[type].icon;
+	const { removeToast } = useToasts();
+
+	useEffect(() => {
+		const dismissTimerId = setTimeout(() => {
+			removeToast(id);
+		}, duration * 1000);
+
+		return () => {
+			clearTimeout(dismissTimerId);
+		};
+	}, [duration, id, removeToast]);
 
 	return (
 		<div
-			className={classnames([styles['Toast'], styles[type], className])}
+			key={id}
+			className={classnames([styles['Toast'], styles[type]])}
 			{...rest}
 		>
 			<IconElement className={styles.IndicationIcon} />
@@ -53,10 +53,10 @@ function Toast({
 			<IconCross
 				className={styles.Close}
 				size="small"
-				onClick={() => alert('Closed')}
+				onClick={() => removeToast(id)}
 			/>
 		</div>
 	);
 }
 
-export default Toast;
+export default React.memo(Toast);

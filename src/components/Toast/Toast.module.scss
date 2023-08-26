@@ -15,8 +15,11 @@
 	padding: 0.75rem;
 	display: flex;
 	gap: 0.75rem;
+	width: 100%;
 	background: #6FCF97;
 	border-radius: 0.375rem;
+	pointer-events: all;
+	transition: all .2s linear;
 
 	font-size: 1rem;
 	font-weight: 600;
@@ -28,13 +31,20 @@
 	}
 
 	.Content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
 		flex: 1;
+		overflow: hidden;
 	}
 
 	h2 {
 		font-size: 1rem;
 		font-weight: 600;
 		line-height: inherit;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
 	p {
