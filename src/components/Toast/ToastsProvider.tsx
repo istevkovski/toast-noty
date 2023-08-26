@@ -4,7 +4,7 @@ import { IToastProps } from 'types/Toasts';
 import { v4 as uuid } from 'uuid';
 import ToastsContainer from './ToastsContainer';
 
-interface IToastsContextProps {
+export interface IToastsContextProps {
 	createToast: ({ ...props }: Omit<IToastProps, 'id'>) => void;
 	removeToast: (id: string) => void;
 }
