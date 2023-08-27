@@ -22,12 +22,17 @@ jobs:
       - name: Build Examples
         run: npm run example:build
 
+      - name: Prepare Deployment
+        run: |
+          mv src/examples/build/* .
+          rm -rf src/examples/build
+
       - name: Deploy
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@users.noreply.github.com"
 
           git checkout -b gh-pages
-          git add src/examples/build/.
+          git add .
           git commit -m "Deploy to gh-pages"
           git push origin gh-pages
