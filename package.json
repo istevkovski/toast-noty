@@ -50,6 +50,7 @@
   },
   "scripts": {
     "example": "vite --config ./src/examples/vite.config.ts",
+    "example:build": "vite build --config ./src/examples/vite.config.ts",
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "prettier --check .",
