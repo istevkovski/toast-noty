@@ -10,20 +10,25 @@
 }
 
 .Toast {
+	margin: 0;
 	position: relative;
 	padding: 0.75rem;
 	display: flex;
 	gap: 0.75rem;
 	width: calc(100% - 2.344rem * 2);
 	background: #6FCF97;
+	border: 0;
 	border-radius: 0.375rem;
 	pointer-events: all;
 	transition: all .2s linear;
+	box-sizing: border-box;
 
 	font-size: 1rem;
 	font-weight: 600;
 	line-height: 1.25rem;
 	color: #0F552C;
+
+	* { margin: 0; padding: 0; border: 0; box-sizing: border-box; }
 
 	.IndicationIcon {
 		margin-top: 0.375rem;

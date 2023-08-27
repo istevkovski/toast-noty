@@ -2,21 +2,27 @@
 
 
 .ToastsContainer {
-	position: fixed;
+	margin: 0;
 	padding: 0.5625rem 0;
+	position: fixed;
 	display: flex;
 	flex-direction: column-reverse;
 	align-items: center;
 	gap: 1.5rem;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
+	width: 100vw;
+	height: 100vh;
+	z-index: 100;
 	pointer-events: none;
 	overflow-y: auto;
+	box-sizing: border-box;
+
+	font-family: 'Montserrat', sans-serif;
 
 	@include breakpoints.screen-tablet {
 		padding: 1.5rem 0;
 	}
+	
+	ol, ul { list-style: none; }
 }

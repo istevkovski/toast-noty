@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { IToastProps } from 'types/Toasts';
 import { v4 as uuid } from 'uuid';
 import '../../styles/fonts.scss';
-import '../../styles/reset.scss';
 import ToastsContainer from './ToastsContainer';
 
 export interface IToastsContextProps {

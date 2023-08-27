@@ -38,7 +38,7 @@ function Toast({
 	}, [duration, id, removeToast]);
 
 	return (
-		<div
+		<li
 			key={id}
 			className={classnames([styles['Toast'], styles[type]])}
 			{...rest}
@@ -53,7 +53,7 @@ function Toast({
 				size="small"
 				onClick={() => removeToast(id)}
 			/>
-		</div>
+		</li>
 	);
 }
 
