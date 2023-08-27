@@ -2,7 +2,7 @@
   "author": "Ivan Stevkovski",
   "license": "MIT",
   "name": "toast-noty",
-  "version": "1.0.7",
+  "version": "1.0.0",
   "repository": "https://github.com/istevkovski/toast-noty",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
