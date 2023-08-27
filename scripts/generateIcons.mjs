@@ -56,7 +56,7 @@ function toPascalCase(string) {
 function generateIconComponent({ componentName, svg }) {
 	return format(
 		`import { Icon } from "./Icon";
-		 import { IconProps } from 'types/Icons';
+		 import { IconProps } from 'types/icons';
 
 		export function ${componentName}({ size, fill, className, ...rest }: IconProps) {
 			return <Icon size={size} className={className} {...rest}>${svg}</Icon>;

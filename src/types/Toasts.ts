@@ -1,4 +1,4 @@
-import { IconProps } from './Icons';
+import { IconProps } from './icons';
 
 export type TToastTypes = 'warning' | 'success' | 'danger';
 

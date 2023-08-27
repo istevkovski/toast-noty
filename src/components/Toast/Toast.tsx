@@ -7,7 +7,7 @@ import {
 } from 'components/icons';
 import { useToasts } from 'hooks/useToasts';
 import React, { useEffect } from 'react';
-import { IToastProps, TToastDefaults, TToastTypes } from 'types/Toasts';
+import { IToastProps, TToastDefaults, TToastTypes } from 'types/toasts';
 import styles from './Toast.module.scss';
 
 const defaults: { [key in TToastTypes]: TToastDefaults } = {

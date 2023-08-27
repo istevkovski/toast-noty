@@ -1,4 +1,4 @@
-import { IToastProps } from 'types/Toasts';
+import { IToastProps } from 'types/toasts';
 import Toast from './Toast';
 import styles from './ToastsContainer.module.scss';
 

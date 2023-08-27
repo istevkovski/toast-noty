@@ -1,5 +1,5 @@
 import { Icon } from './Icon';
-import { IconProps } from 'types/Icons';
+import { IconProps } from 'types/icons';
 
 export function IconSuccess({ size, fill, className, ...rest }: IconProps) {
   return (

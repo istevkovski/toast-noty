@@ -1,12 +1,12 @@
 import React, { createContext, useCallback, useState } from 'react';
 import ReactDOM from 'react-dom';
-import { IToastProps } from 'types/Toasts';
+import { IToastProps } from 'types/toasts';
 import { v4 as uuid } from 'uuid';
 import '../../styles/fonts.scss';
 import ToastsContainer from './ToastsContainer';
 
 export interface IToastsContextProps {
-	createToast: ({ ...props }: Omit<IToastProps, 'id'>) => void;
+	createToast: ({ ...props }: PartialBy<IToastProps, 'id'>) => void;
 	removeToast: (id: string) => void;
 }
 
@@ -21,9 +21,12 @@ export const ToastsProvider = ({
 }) => {
 	const [toasts, setToasts] = useState<IToastProps[]>([]);
 
-	const createToast = useCallback((toast: Omit<IToastProps, 'id'>) => {
+	const createToast = useCallback((toast: PartialBy<IToastProps, 'id'>) => {
 		const uniqId = uuid();
-		setToasts((prevToasts) => [...prevToasts, { ...toast, id: uniqId }]);
+		setToasts((prevToasts) => [
+			...prevToasts,
+			{ ...toast, id: toast?.id || uniqId },
+		]);
 	}, []);
 
 	const removeToast = useCallback((id: string) => {

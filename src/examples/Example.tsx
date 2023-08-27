@@ -8,7 +8,7 @@ export const Example = () => {
 		<button
 			onClick={() =>
 				createToast({
-					type: "warning",
+					type: 'warning',
 					title: `Title: ${uuid()}`,
 					message:
 						'Sit esse duis incididunt nostrud tempor est pariatur enim. Quis cillum est cupidatat qui do. Exercitation velit ea velit irure dolor deserunt eiusmod ut reprehenderit. Cillum sunt duis ullamco aliquip elit cillum pariatur.',
