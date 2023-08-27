@@ -15,40 +15,66 @@ $ npm install --save toast-noty
 
 ## Usage
 
-```jsx
-  import { useToasts } from "hooks/useToasts";
-
-  export const Example = () => {
-    const { createToast } = useToasts();
-
-    return (
-      <button
-        onClick={() => createToast({
-          type: "warning",
-          title: "Achtung!",
-          message:
-            "There's something happening in your application that needs your attention ⚠️",
-          duration: 3,
-        })
-        }
-      >
-        Toast Noty!
-      </button>
-    );
-  };
+Wrap your application in the `ToastsProvider` component like so:
+```
+<ToastsProvider>
+    <Example />
+</ToastsProvider>
 ```
 
-## Demo
+The `useToasts` hook will provide you with `createToast` and `removeToast` and you can use them as shown below:
+
+```jsx
+import { useToasts } from "hooks/useToasts";
+
+export const Example = () => {
+  const { createToast } = useToasts();
+
+  return (
+    <button
+      onClick={() => createToast({
+        type: "warning",
+        title: "Achtung!",
+        message:
+          "There's something happening in your application that needs your attention ⚠️",
+        duration: 3,
+      })
+      }
+    >
+      Toast Noty!
+    </button>
+  );
+};
+```
 
 ## Documentation
+
+### `createToast`
+
+Creates and displays a new toast with customizable properties.
+
+| Parameter             | Description                                                                      | Default Value               |
+| --------------------- | -------------------------------------------------------------------------------- | --------------------------- |
+| `{ id, type, title, message, duration }` | An object containing the toast properties.                    |                             |
+| `id`                  | _(Optional)_ Custom `'id'` to use for the notification.                          | `uuid`                      |
+| `type`                | _(Optional)_ The type of the toast: `'warning'`, `'success'`, or `'danger'`.     | `'success'`                 |
+| `title`               | _(Optional)_ The title of the toast.                                             | `type`                      |
+| `message`             | The main message content of the toast.                                           |                             |
+| `duration`            | _(Optional)_ The duration (in seconds) the toast should be displayed.            | `6`                         |
+
+### `removeToast`
+
+Removes a toast with the specified `id`.
+
+| Parameter             | Description                                                                      |
+| --------------------- | -------------------------------------------------------------------------------- |
+| `id`                  | The unique identifier of the toast to be removed.                                |
+
+## Demo
 
 ## Contribute
 
 Help this package reach more people by giving it a ⭐.
-
-### Code Contributors
-
-<a href="https://github.com/istevkovski/toast-noty/graphs/contributors"><img src="https://opencollective.com/toast-noty/contributors.svg?width=890&button=false" /></a>
 
 ## License
 
