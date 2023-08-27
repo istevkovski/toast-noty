@@ -16,26 +16,26 @@ $ npm install --save toast-noty
 ## Usage
 
 ```jsx
-  import { useToasts } from 'hooks/useToasts';
+  import { useToasts } from "hooks/useToasts";
 
-	export const Example = () => {
-		const { createToast } = useToasts();
+  export const Example = () => {
+    const { createToast } = useToasts();
 
-		return (
-			<button
-				onClick={() =>
-					createToast({
-						type: "warning",
-						title: "Achtung!",
-						message: "There's something happening in your application that needs your attention ⚠️",
-						duration: 3,
-					})
-				}
-			>
-				Toast Noty!
-			</button>
-		);
-	};
+    return (
+      <button
+        onClick={() => createToast({
+          type: "warning",
+          title: "Achtung!",
+          message:
+            "There's something happening in your application that needs your attention ⚠️",
+          duration: 3,
+        })
+        }
+      >
+        Toast Noty!
+      </button>
+    );
+  };
 ```
 
 ## Demo
