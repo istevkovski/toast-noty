@@ -8,8 +8,6 @@ import {
 import { useToasts } from 'hooks/useToasts';
 import React, { useEffect } from 'react';
 import { IToastProps, TToastDefaults, TToastTypes } from 'types/Toasts';
-import '../../styles/fonts.scss';
-import '../../styles/reset.scss';
 import styles from './Toast.module.scss';
 
 const defaults: { [key in TToastTypes]: TToastDefaults } = {
