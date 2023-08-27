@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/istevkovski/toast-noty/compare/v1.0.0...v1.1.0) (2023-08-27)
+
+
+### Features
+
+* commit linting with husky ([66da4c3](https://github.com/istevkovski/toast-noty/commit/66da4c3d6a5202dbb529c6755d9a3e485839c24c))
+
 # 1.0.0 (2023-08-27)
 
 
