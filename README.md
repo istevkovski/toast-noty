@@ -13,6 +13,10 @@
 $ npm install --save toast-noty
 ```
 
+## Changelog
+
+See the [CHANGELOG.md](./CHANGELOG.md) file for a history of changes and updates.
+
 ## Usage
 
 Wrap your application in the `ToastsProvider` component like so:
