@@ -11,7 +11,7 @@ export const Example = () => {
 					type: 'warning',
 					title: `Title: ${uuid()}`,
 					message:
-						'Sit esse duis incididunt nostrud est pariatur enim. Quis cillum est cupidatat qui do. Exercitation velit ea velit irure dolor deserunt eiusmod ut reprehenderit. Cillum sunt duis ullamco aliquip elit cillum pariatur.',
+						'Sit esse duis incididunt nostrud tempor est pariatur enim. Quis cillum est cupidatat qui do. Exercitation velit ea velit irure dolor deserunt eiusmod ut reprehenderit. Cillum sunt duis ullamco aliquip elit cillum pariatur.',
 					duration: 3,
 				})
 			}
