@@ -23,4 +23,19 @@ jobs:
         run: npm run example:build
 
       - name: Deploy
-        run: npx gh-pages -d src/examples/build
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@users.noreply.github.com"
+
+          git checkout --orphan gh-pages
+
+          shopt -s extglob
+          rm -rf -- !(src/examples/build)
+
+          cp -r src/examples/build/* .
+
+          rm -rf src
+
+          git add .
+          git commit -m "Deploy to gh-pages"
+          git push origin gh-pages
