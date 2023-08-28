@@ -1,5 +1,5 @@
 import React from 'react';
-import { IToastProps } from '../../types/Toasts';
+import { IToastProps } from '../../types/toasts';
 declare function Toast({ id, type, title, message, duration, ...rest }: IToastProps): import("react/jsx-runtime").JSX.Element;
 declare const _default: React.MemoExoticComponent<typeof Toast>;
 export default _default;

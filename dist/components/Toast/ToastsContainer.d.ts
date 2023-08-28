@@ -1,4 +1,4 @@
-import { IToastProps } from '../../types/Toasts';
+import { IToastProps } from '../../types/toasts';
 type TToastContainerProps = {
     toasts: IToastProps[];
 };

@@ -1,7 +1,7 @@
 import React from 'react';
-import { IToastProps } from '../../types/Toasts';
+import { IToastProps } from '../../types/toasts';
 export interface IToastsContextProps {
-    createToast: ({ ...props }: Omit<IToastProps, 'id'>) => void;
+    createToast: ({ ...props }: PartialBy<IToastProps, 'id'>) => void;
     removeToast: (id: string) => void;
 }
 export declare const ToastsContext: React.Context<IToastsContextProps | undefined>;
