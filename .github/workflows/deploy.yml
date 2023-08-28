@@ -39,7 +39,7 @@ jobs:
           rm -rf !(deploy)
           echo --CLEANUP--
           ls -l
-          mv deploy/ .
+          mv deploy/* .
           rm -rf deploy
 
       - name: Deploy
