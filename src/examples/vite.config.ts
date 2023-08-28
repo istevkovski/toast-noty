@@ -1,24 +1,25 @@
 import react from '@vitejs/plugin-react';
+import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [react()],
+	root: 'src/examples/',
 	server: {
-		open: '/src/examples/index.html',
+		open: 'index.html',
 	},
 	build: {
-		outDir: 'src/examples/build',
+		outDir: 'build',
 		rollupOptions: {
-			input: {
-				main: '/src/examples/index.tsx',
-			},
+			input: '/index.html',
 		},
+		assetsDir: '.',
 	},
 	resolve: {
 		alias: {
-			components: '/src/components',
-			hooks: '/src/hooks',
-			types: '/src/types',
+			components: path.resolve(__dirname, '../components'),
+			hooks: path.resolve(__dirname, '../hooks'),
+			types: path.resolve(__dirname, '../types'),
 		},
 	},
 });
