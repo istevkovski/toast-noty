@@ -22,23 +22,12 @@ jobs:
       - name: Build Examples
         run: npm run example:build
 
-      - name: Debug
-        run: |
-          pwd
-          ls -l src/examples/build/
-          echo --ROOT--
-          ls -l
-
       - name: Prepare Deployment
         run: |
           mkdir deploy
           mv src/examples/build/* deploy/
-          echo --DEPLOY--
-          ls -l
-          shopt -s dotglob extglob
-          rm -rf !(deploy|.git)
-          echo --CLEANUP--
-          ls -l
+          shopt -s extglob
+          rm -rf !(deploy)
           mv deploy/* .
           rm -rf deploy
 
