@@ -31,7 +31,8 @@ jobs:
 
       - name: Prepare Deployment
         run: |
-          mv -p src/examples/build/* deploy/
+          mkdir deploy
+          mv src/examples/build/* deploy/
           echo --DEPLOY--
           ls -l
           shopt -s extglob
