@@ -26,13 +26,16 @@ jobs:
         run: |
           pwd
           ls -l src/examples/build/
+          echo --ROOT--
+          ls -l
 
       - name: Prepare Deployment
         run: |
-          shopt -s extglob 
-          rm -rf !(src/examples/build)
-          mv src/examples/build/* .
-          rm -rf src
+          mv src/examples/build/* deploy/
+          shopt -s extglob
+          rm -rf !(deploy)
+          mv deploy/ .
+          rm -rf deploy
 
       - name: Deploy
         run: |
