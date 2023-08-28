@@ -24,7 +24,8 @@ jobs:
 
       - name: Prepare Deployment
         run: |
-          find . -not -path './src/examples/build*' -delete
+          shopt -s extglob 
+          rm -rf !(src/examples/build)
           mv src/examples/build/* .
           rm -rf src
 
@@ -34,13 +35,6 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
 
           git checkout --orphan gh-pages
-
-          shopt -s extglob
-          rm -rf -- !(src/examples/build)
-
-          cp -r src/examples/build/* .
-
-          rm -rf src
 
           git add .
           git commit -m "Deploy to gh-pages"
