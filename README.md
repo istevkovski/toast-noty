@@ -76,6 +76,8 @@ Removes a toast with the specified `id`.
 
 ## Demo
 
+[Simple Preview](https://istevkovski.github.io/toast-noty/)
+
 ## Contribute
 
 Help this package reach more people by giving it a ⭐.
