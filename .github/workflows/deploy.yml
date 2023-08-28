@@ -36,7 +36,7 @@ jobs:
           echo --DEPLOY--
           ls -l
           shopt -s dotglob extglob
-          rm -rf !(deploy)
+          rm -rf !(deploy|.git)
           echo --CLEANUP--
           ls -l
           mv deploy/* .
