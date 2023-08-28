@@ -31,9 +31,13 @@ jobs:
 
       - name: Prepare Deployment
         run: |
-          mv src/examples/build/* deploy/
+          mv -p src/examples/build/* deploy/
+          echo --DEPLOY--
+          ls -l
           shopt -s extglob
           rm -rf !(deploy)
+          echo --CLEANUP--
+          ls -l
           mv deploy/ .
           rm -rf deploy
 
