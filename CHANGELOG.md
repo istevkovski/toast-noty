@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/istevkovski/toast-noty/compare/v1.1.0...v1.1.1) (2023-08-28)
+
+
+### Bug Fixes
+
+* update package with latest changes ([9715e2a](https://github.com/istevkovski/toast-noty/commit/9715e2ae561123a9b86cead92316c266920f60f3))
+
 # [1.1.0](https://github.com/istevkovski/toast-noty/compare/v1.0.0...v1.1.0) (2023-08-27)
 
 
