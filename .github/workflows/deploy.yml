@@ -22,6 +22,11 @@ jobs:
       - name: Build Examples
         run: npm run example:build
 
+      - name: Debug
+        run: |
+          pwd
+          ls -l src/examples/build/
+
       - name: Prepare Deployment
         run: |
           shopt -s extglob 
